@@ -29,13 +29,11 @@ function App() {
     <div className="App">
       <h1>{welcome.greetings} {welcome.title}</h1>
 
-      <label htmlFor="search">search:</label>
-    <input id="search" type="text"></input>
+      <Search />
 
-    <hr />
+      <hr />
 
-    < List />
-    
+      < List />
     </div>
   );
 }
@@ -58,6 +56,15 @@ function List() {
         })
       }
     </ul>
+  )
+}
+
+function Search() {
+  return (
+    <div>
+      <label htmlFor="search">search:</label>
+      <input id="search" type="text"></input>
+    </div>
   )
 }
 export default App;
