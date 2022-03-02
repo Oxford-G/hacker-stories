@@ -41,7 +41,7 @@ const App = () => {
 const List = (props) => (
   <ul>
     {props.list.map((item) => (
-      <item key={item.objectID} item={item}/>
+      <Item key={item.objectID} item={item}/>
     ))}
   </ul>
   );
@@ -49,7 +49,7 @@ const List = (props) => (
   const Item = (props) => (
     <li>
     <span>
-      <a href={props.item.url}>{item.title}</a>  
+      <a href={props.item.url}>{props.item.title}</a>  
     </span>
     <span>{props.item.author}</span>
     <span>{props.item.num_comments}</span>
