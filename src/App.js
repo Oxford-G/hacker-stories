@@ -55,12 +55,11 @@ const List = () => (
   </ul>
   );
 
-const Search = () => {
-  return (
+const Search = () => (
     <div>
       <label htmlFor="search">search:</label>
       <input id="search" type="text"></input>
     </div>
-  )
-}
+  );
+  
 export default App;
