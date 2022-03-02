@@ -36,7 +36,7 @@ const App = () => (
     </div>
   );
 
-const List = () => {(
+const List = () => (
     <ul>
       {
         list.map(function(item){
@@ -54,7 +54,6 @@ const List = () => {(
       }
     </ul>
   )
-}
 
 function Search() {
   return (
