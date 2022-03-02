@@ -54,11 +54,15 @@ const List = () => (
   </ul>
   );
 
-const Search = () => (
+const Search = () => {
+  const handleChange = (event) => {
+    console.log(event)
+  }
+  return (
     <div>
       <label htmlFor="search">search:</label>
-      <input id="search" type="text"></input>
+      <input id="search" type="text" onChange={handleChange}></input>
     </div>
   );
-
+}
 export default App;
