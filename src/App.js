@@ -55,7 +55,7 @@ const List = () => (
   </ul>
   );
 
-function Search() {
+const Search = () => {
   return (
     <div>
       <label htmlFor="search">search:</label>
