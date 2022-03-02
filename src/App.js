@@ -24,8 +24,7 @@ const list = [
   }
 ]
 
-function App() {
-  return (
+const App = () => (
     <div className="App">
       <h1>{welcome.greetings} {welcome.title}</h1>
 
@@ -36,7 +35,6 @@ function App() {
       < List />
     </div>
   );
-}
 
 function List() {
   return(
