@@ -36,7 +36,7 @@ const App = () => (
     </div>
   );
 
-function List() {
+const List = () => {
   return(
     <ul>
       {
