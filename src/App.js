@@ -60,13 +60,18 @@ const List = (props) => (
 const Search = () => {
   const [searchTerm, setSearchTerm] = React.useState('')
   const handleChange = (event) => {
-    searchTerm(event.target.value)
+    setSearchTerm(event.target.value)
   }
   return (
     <div>
       <label htmlFor="search">search:</label>
       <input id="search" type="text" onChange={handleChange}></input>
+
+      <p>
+        Searching for <strong>{searchTerm}</strong>
+      </p>
     </div>
+    
   );
 }
 export default App;
