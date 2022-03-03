@@ -60,7 +60,7 @@ const List = (props) => (
 const Search = () => {
   const [searchTerm, setSearchTerm] = React.useState('')
   const handleChange = (event) => {
-    console.log(event.target.value)
+    searchTerm(event.target.value)
   }
   return (
     <div>
