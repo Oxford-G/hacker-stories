@@ -63,8 +63,7 @@ const List = (props) => (
     </li>
   )
 
-const Search = () => {
-  return (
+const Search = () => (
     <div>
       <label htmlFor="search">search:</label>
       <input id="search" type="text" onChange={props.onSearch}></input>
@@ -75,5 +74,4 @@ const Search = () => {
     </div>
     
   );
-}
 export default App;
