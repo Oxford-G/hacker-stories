@@ -68,12 +68,12 @@ const Search = () => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value)
 
-    props.onSearch(event)
+    
   }
   return (
     <div>
       <label htmlFor="search">search:</label>
-      <input id="search" type="text" onChange={handleChange}></input>
+      <input id="search" type="text" onChange={props.onSearch}></input>
 
       <p>
         Searching for <strong>{searchTerm}</strong>
