@@ -26,6 +26,7 @@ const App = () => {
     }
   ];
 
+  
   const handleSearch = (event) => {
     console.log(event.target.value)
   }
