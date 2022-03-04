@@ -65,11 +65,7 @@ const List = (props) => (
 
 const Search = () => {
   
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value)
-
-    
-  }
+ 
   return (
     <div>
       <label htmlFor="search">search:</label>
