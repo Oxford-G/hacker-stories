@@ -32,6 +32,10 @@ const App = () => {
     setSearchTerm(event.target.value)
   }
 
+  const searchedStories = stories.filter(function(value){
+    return value.title.includes(searchTerm)
+  })
+
   return (
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
