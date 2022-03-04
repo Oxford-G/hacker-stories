@@ -34,7 +34,7 @@ const App = () => {
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
 
-    <Search />
+    <Search onSearch={handleSearch}/>
 
     <hr />
 
