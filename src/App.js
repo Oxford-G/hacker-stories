@@ -64,8 +64,6 @@ const List = (props) => (
   )
 
 const Search = () => {
-  
- 
   return (
     <div>
       <label htmlFor="search">search:</label>
