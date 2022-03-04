@@ -26,6 +26,10 @@ const App = () => {
     }
   ];
 
+  const handleSearch = (event) => {
+    console.log(event.target.value)
+  }
+
   return (
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
