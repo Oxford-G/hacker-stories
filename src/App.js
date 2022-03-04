@@ -44,7 +44,7 @@ const App = () => {
 
     <hr />
 
-    < List list={stories}/>
+    < List list={searchedStories}/>
   </div>
 )};
 
