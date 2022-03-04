@@ -65,6 +65,8 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = React.useState('')
   const handleChange = (event) => {
     setSearchTerm(event.target.value)
+
+    props.onSearch(event)
   }
   return (
     <div>
