@@ -66,14 +66,11 @@ const List = (props) => (
     </li>
   )
 
-const Search = () => (
+const Search = (props) => (
     <div>
       <label htmlFor="search">search:</label>
       <input id="search" type="text" onChange={props.onSearch}></input>
 
-      <p>
-        Searching for <strong>{searchTerm}</strong>
-      </p>
     </div>
     
   );
