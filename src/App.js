@@ -32,7 +32,7 @@ const App = () => {
     setSearchTerm(event.target.value)
   }
 
-  const searchedStories = stories.filter((story) => story.title.includes(searchTerm.toLowerCase())
+  const searchedStories = stories.filter((story) => story.title.toLowerCase.includes(searchTerm.toLowerCase())
   )
 
   return (
