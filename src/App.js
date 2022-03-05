@@ -32,9 +32,8 @@ const App = () => {
     setSearchTerm(event.target.value)
   }
 
-  const searchedStories = stories.filter(function(value){
-    return value.title.includes(searchTerm)
-  })
+  const searchedStories = stories.filter((story) => story.title.includes(searchTerm)
+  )
 
   return (
   <div className="App">
