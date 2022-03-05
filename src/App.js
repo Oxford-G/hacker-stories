@@ -32,7 +32,7 @@ const App = () => {
     setSearchTerm(event.target.value)
   }
 
-  const searchedStories = stories.filter((story) => story.title.toLowerCase.includes(searchTerm.toLowerCase())
+  const searchedStories = stories.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
@@ -66,12 +66,13 @@ const List = (props) => (
     </li>
   )
 
-const Search = (props) => (
-    <div>
+const Search = (props) => {
+  return (
+        <div>
       <label htmlFor="search">search:</label>
       <input id="search" type="text" value={props.search} onChange={props.onSearch}></input>
 
     </div>
-    
-  );
+  ) 
+}
 export default App;
