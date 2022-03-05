@@ -47,7 +47,7 @@ const App = () => {
   </div>
 )};
 
-const List = (props) => (
+const List = ({list}) => (
   <ul>
     {props.list.map((item) => (
       <Item key={item.objectID} item={item}/>
