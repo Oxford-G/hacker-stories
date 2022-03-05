@@ -66,13 +66,11 @@ const List = (props) => (
     </li>
   )
 
-const Search = (props) => {
-  return (
-        <div>
-      <label htmlFor="search">search:</label>
-      <input id="search" type="text" value={props.search} onChange={props.onSearch}></input>
+const Search = ({search, onSearch}) => (
+  <div>
+    <label htmlFor="search">search:</label>
+    <input id="search" type="text" value={search} onChange={onSearch}></input>
 
-    </div>
-  ) 
-}
+  </div>
+);
 export default App;
