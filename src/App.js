@@ -55,7 +55,7 @@ const List = ({list}) => (
   </ul>
   );
 
-  const Item = (props) => (
+  const Item = ({item}) => (
     <li>
     <span>
       <a href={props.item.url}>{props.item.title}</a>  
