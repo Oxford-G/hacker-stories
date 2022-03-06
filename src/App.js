@@ -5,10 +5,10 @@ const welcome = {
   title: 'React'
 }
 
-const useSemiPersistentState = (initialState) => {
-  const [value, setValue] = React.useState(localStorage.getItem('search') || initialState);
+const useSemiPersistentState = (key, initialState) => {
+  const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
 
-  React.useEffect(() => {localStorage.setItem('value', value)}, [value])
+  React.useEffect(() => {localStorage.setItem(key, value)}, [value, key])
 
   return [value, setValue]
 }
