@@ -6,11 +6,11 @@ const welcome = {
 }
 
 const useSemiPersistentState = (initialState) => {
-  const [searchTerm, setSearchTerm] = React.useState(localStorage.getItem('search') || initialState);
+  const [value, setValue] = React.useState(localStorage.getItem('search') || initialState);
 
-  React.useEffect(() => {localStorage.setItem('search', searchTerm)}, [searchTerm])
+  React.useEffect(() => {localStorage.setItem('value', value)}, [value])
 
-  return [searchTerm, setSearchTerm]
+  return [value, setValue]
 }
 
 const App = () => {
