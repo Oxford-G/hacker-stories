@@ -26,7 +26,6 @@ const App = () => {
     }
   ];
 
-
    const handleSearch = (event) => {
       setSearchTerm(event.target.value);
   }
