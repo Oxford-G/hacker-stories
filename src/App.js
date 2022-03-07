@@ -6,7 +6,6 @@ const welcome = {
 }
 
 const useSemiPersistentState = (key, initialState) => {
-  
   const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
 
   React.useEffect(() => {localStorage.setItem(key, value)}, [value, key])
@@ -15,7 +14,6 @@ const useSemiPersistentState = (key, initialState) => {
 }
 
 const App = () => {
-
   const stories = [
     {  title: 'React',
       url: 'https://reactjs.org/',
