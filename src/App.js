@@ -14,6 +14,7 @@ const useSemiPersistentState = (key, initialState) => {
 }
 
 const App = () => {
+
   const stories = [
     {  title: 'React',
       url: 'https://reactjs.org/',
