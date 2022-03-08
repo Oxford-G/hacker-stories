@@ -82,10 +82,4 @@ const List = ({list}) => (
     </li>
   );
 
-const Search = ({search, onSearch}) => (
-  <>
-    <label htmlFor="search">search:</label>
-    <input id="search" type="text" value={search} onChange={onSearch}></input>
-  </>
-);
 export default App;
