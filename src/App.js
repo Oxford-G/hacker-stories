@@ -75,9 +75,9 @@ const List = ({list}) => (
   );
 
 const Search = ({search, onSearch}) => (
-  <div>
+  <>
     <label htmlFor="search">search:</label>
     <input id="search" type="text" value={search} onChange={onSearch}></input>
-  </div>
+  </>
 );
 export default App;
