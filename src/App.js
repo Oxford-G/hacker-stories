@@ -48,7 +48,7 @@ const App = () => {
     <h1>{welcome.greetings} {welcome.title}</h1>
 
     <InputWithLabel id="search" label="Search" value={searchTerm} onInputChange={handleSearch} />
-    
+
     <Search search={searchTerm} onSearch={handleSearch}/>
 
     <hr />
@@ -57,6 +57,9 @@ const App = () => {
   </div>
 )};
 
+const InputWithLabel = ({id, label, value, onInputChange}) => {
+  
+}
 const List = ({list}) => (
   <ul>
     {list.map((item) => (
