@@ -63,6 +63,7 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 
   React.useEffect(() => {
       if(isFocused && inputRef.current){
+        
         inputRef.current.focus();
       }
     }, [isFocused]);
