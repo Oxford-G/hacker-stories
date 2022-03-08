@@ -58,7 +58,9 @@ const App = () => {
 )};
 
 const InputWithLabel = ({id, label, value, onInputChange}) => {
-  
+  <>
+  <label htmlFor={id}>{label}</label>
+  </>
 }
 const List = ({list}) => (
   <ul>
