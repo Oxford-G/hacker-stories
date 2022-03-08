@@ -71,7 +71,7 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
   return(
     <>
       <label htmlFor={id}>{children}:</label>
-      <input ref={inputRef} type={type} value={value} onChange={onInputChange} autoFocus={isFocused}/>
+      <input ref={inputRef} type={type} value={value} onChange={onInputChange} />
     </>
   )
 }
