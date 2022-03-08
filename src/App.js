@@ -57,12 +57,12 @@ const App = () => {
   </div>
 )};
 
-const InputWithLabel = ({id, label, value, onInputChange}) => {
+const InputWithLabel = ({id, label, value, onInputChange}) => (
   <>
   <label htmlFor={id}>{label}</label>
   <input type="text" value={value} onChange={onInputChange} />
   </>
-}
+)
 const List = ({list}) => (
   <ul>
     {list.map((item) => (
