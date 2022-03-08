@@ -63,6 +63,7 @@ const InputWithLabel = ({id, label, value, onInputChange}) => (
   <input type="text" value={value} onChange={onInputChange} />
   </>
 )
+
 const List = ({list}) => (
   <ul>
     {list.map((item) => (
