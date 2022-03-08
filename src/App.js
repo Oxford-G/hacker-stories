@@ -57,12 +57,16 @@ const App = () => {
   </div>
 )};
 
-const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => (
-  <>
-  <label htmlFor={id}>{children}:</label>
-  <input type={type} value={value} onChange={onInputChange} autoFocus={isFocused}/>
-  </>
-)
+const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
+
+  const inputRef = React.useRef();
+  return(
+    <>
+      <label htmlFor={id}>{children}:</label>
+      <input type={type} value={value} onChange={onInputChange} autoFocus={isFocused}/>
+    </>
+  )
+}
 
 const List = ({list}) => (
   <ul>
