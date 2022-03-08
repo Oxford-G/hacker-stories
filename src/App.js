@@ -47,7 +47,7 @@ const App = () => {
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
 
-    <InputWithLabel id="search" label="Search" value={searchTerm} onInputChange={handleSearch}>
+    <InputWithLabel id="search" value={searchTerm} onInputChange={handleSearch}>
       Search:
     </InputWithLabel>
 
