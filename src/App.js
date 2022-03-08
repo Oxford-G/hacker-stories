@@ -60,6 +60,7 @@ const App = () => {
 const InputWithLabel = ({id, label, value, onInputChange}) => {
   <>
   <label htmlFor={id}>{label}</label>
+  <input type="text" value={value} onChange={onInputChange} />
   </>
 }
 const List = ({list}) => (
