@@ -36,10 +36,10 @@ const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
-  const [stories, setStories] = React.useState(initialStories)
+  const [stories, setStories] = React.useState(initialStories);
 
-   const handleSearch = (event) => {
-      setSearchTerm(event.target.value);
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
   }
 
   const searchedStories = stories.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
