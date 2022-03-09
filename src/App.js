@@ -45,7 +45,7 @@ const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
-  const [stories, setStories] = React.useState()
+  const [stories, setStories] = React.useState(initialStories)
 
    const handleSearch = (event) => {
       setSearchTerm(event.target.value);
