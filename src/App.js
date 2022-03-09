@@ -91,7 +91,11 @@ const List = ({list, onRemoveItem}) => (
   </ul>
   );
 
-  const Item = ({item, onRemoveItem}) => (
+  const Item = ({item, onRemoveItem}) => {
+    const handleRemoveItem = () => {
+      onRemoveItem(item)
+    }
+    return(
     <li>
     <span>
       <a href={item.url}>{item.title}</a>  
@@ -100,6 +104,6 @@ const List = ({list, onRemoveItem}) => (
     <span>{item.num_comments}</span>
     <span>{item.points}</span>
     </li>
-  );
+  )};
 
 export default App;
