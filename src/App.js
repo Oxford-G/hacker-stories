@@ -38,6 +38,9 @@ const App = () => {
 
   const [stories, setStories] = React.useState(initialStories);
 
+  const handleRemoveStory = (item) => {
+    const newStories = stories.filter((story) => item.objectID !== story.objectID);
+  }
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   }
