@@ -15,7 +15,6 @@ const useSemiPersistentState = (key, initialState) => {
 
 const App = () => {
 
-
   // const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
   const [stories, setStories] = React.useState(initialStories)
