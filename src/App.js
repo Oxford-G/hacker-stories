@@ -92,9 +92,9 @@ const List = ({list, onRemoveItem}) => (
   );
 
   const Item = ({item, onRemoveItem}) => {
-    const handleRemoveItem = () => {
-      onRemoveItem(item)
-    }
+    // const handleRemoveItem = () => {
+    //   onRemoveItem(item)
+    // }
     return(
     <li>
     <span>
@@ -104,7 +104,7 @@ const List = ({list, onRemoveItem}) => (
     <span>{item.num_comments}</span>
     <span>{item.points}</span>
     <span>
-      <button type="button" onClick={handleRemoveItem}>Dismiss</button>
+      <button type="button" onClick={()=>onRemoveItem(item)}>Dismiss</button>
     </span>
     </li>
   )};
