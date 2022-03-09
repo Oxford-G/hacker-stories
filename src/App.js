@@ -40,6 +40,7 @@ const App = () => {
 
   const handleRemoveStory = (item) => {
     const newStories = stories.filter((story) => item.objectID !== story.objectID);
+    setStories(newStories);
   }
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
