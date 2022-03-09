@@ -42,6 +42,7 @@ const App = () => {
     const newStories = stories.filter((story) => item.objectID !== story.objectID);
     setStories(newStories);
   }
+  
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   }
