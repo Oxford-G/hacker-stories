@@ -42,7 +42,7 @@ const App = () => {
     const newStories = stories.filter((story) => item.objectID !== story.objectID);
     setStories(newStories);
   }
-  
+
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   }
@@ -60,7 +60,7 @@ const App = () => {
 
     <hr />
 
-    < List list={searchedStories}/>
+    < List list={searchedStories} onRemoveItem={handleRemoveStory} />
   </div>
 )};
 
@@ -83,7 +83,7 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
   )
 }
 
-const List = ({list}) => (
+const List = ({list, onRemoveItem}) => (
   <ul>
     {list.map((item) => (
       <Item key={item.objectID} item = {item} />
