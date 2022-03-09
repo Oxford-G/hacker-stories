@@ -86,12 +86,12 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 const List = ({list, onRemoveItem}) => (
   <ul>
     {list.map((item) => (
-      <Item key={item.objectID} item = {item} />
+      <Item key={item.objectID} item = {item} onRemoveItem={onRemoveItem}/>
     ))}
   </ul>
   );
 
-  const Item = ({item}) => (
+  const Item = ({item, onRemoveItem}) => (
     <li>
     <span>
       <a href={item.url}>{item.title}</a>  
