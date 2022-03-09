@@ -103,6 +103,9 @@ const List = ({list, onRemoveItem}) => (
     <span>{item.author}</span>
     <span>{item.num_comments}</span>
     <span>{item.points}</span>
+    <span>
+      <button type="button" onClick={handleRemoveItem}>Dismiss</button>
+    </span>
     </li>
   )};
 
