@@ -34,6 +34,15 @@ const App = () => {
     }
   ];
 
+  const initialStories = [
+      {
+      title: 'React',
+      },
+      {
+      title: 'Redux',
+      },
+    ];
+
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
    const handleSearch = (event) => {
