@@ -25,7 +25,9 @@ const initialStories = [
 ];
 
 const getAsyncStories = () => {
-  new Promise()({data:{stories: initialStories}})
+  new Promise(resolve, reject){
+    resolve({data:{stories: initialStories}})
+  }
 };
 
 const useSemiPersistentState = (key, initialState) => {
