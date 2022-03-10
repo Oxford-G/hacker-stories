@@ -40,7 +40,7 @@ const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
-  const [stories, setStories] = React.useState(initialStories);
+  const [stories, setStories] = React.useState([]);
 
   const handleRemoveStory = (item) => {
     const newStories = stories.filter((story) => item.objectID !== story.objectID);
