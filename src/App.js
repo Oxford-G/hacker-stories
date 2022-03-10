@@ -24,11 +24,8 @@ const initialStories = [
   }
 ];
 
-const getAsyncStories = () => {
-  new Promise(resolve, reject){
-    resolve({data:{stories: initialStories}})
-  }
-};
+const getAsyncStories = () => 
+  new Promise((resolve) => resolve({data:{stories: initialStories}}))
 
 const useSemiPersistentState = (key, initialState) => {
   const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
