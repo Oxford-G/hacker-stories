@@ -25,7 +25,9 @@ const initialStories = [
 ];
 
 const getAsyncStories = () => 
-  new Promise((resolve) => resolve({data:{stories: initialStories}}))
+  new Promise((resolve) => 
+    setTimeout(()=> resolve({data:{stories: initialStories}}), 1000) 
+  )
 
 const useSemiPersistentState = (key, initialState) => {
   const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
