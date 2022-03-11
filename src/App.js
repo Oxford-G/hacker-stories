@@ -50,7 +50,7 @@ const App = () => {
 
     getAsyncStories().then((result) => {
       setStories(result.data.stories);
-      setIsLoading(true);
+      setIsLoading(false);
     })
   }, [])
 
