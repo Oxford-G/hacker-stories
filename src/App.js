@@ -43,6 +43,8 @@ const App = () => {
 
   const [stories, setStories] = React.useState([]);
 
+  const [isLoading, setIsLoading] = React.useState(false)
+
   React.useEffect(() =>{
     getAsyncStories().then((result) => {
       setStories(result.data.stories)
