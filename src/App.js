@@ -78,6 +78,8 @@ const App = () => {
     </InputWithLabel>
 
     <hr />
+    
+    {isError && <p>Something went wrong ...</p>}
 
     {isLoading ?(
 
