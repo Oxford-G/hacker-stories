@@ -103,9 +103,7 @@ const List = ({list, onRemoveItem}) => (
   );
 
   const Item = ({item, onRemoveItem}) => {
-    // const handleRemoveItem = () => {
-    //   onRemoveItem(item)
-    // }
+
     return(
     <li>
     <span>
