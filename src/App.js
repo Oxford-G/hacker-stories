@@ -49,8 +49,8 @@ const App = () => {
     setIsLoading(true);
 
     getAsyncStories().then((result) => {
-      setStories(result.data.stories)
-      setIsLoading(true)
+      setStories(result.data.stories);
+      setIsLoading(true);
     })
   }, [])
 
