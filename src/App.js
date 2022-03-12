@@ -38,9 +38,12 @@ const useSemiPersistentState = (key, initialState) => {
 }
 
 const storiesReducer = (state, action) => {
+  
   if(action.type === 'SET_STORIES') {
     return action.payload;
-  } else {
+  } else if(type === 'REMOVE_STORY'){
+    return state.filter(story => action.payload.objectID !== story.objectID)
+  } else{
     throw new Error()
   }
 };
