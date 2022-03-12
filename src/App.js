@@ -52,6 +52,7 @@ const App = () => {
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
   // const [stories, setStories] = React.useState([]);
+  
   const [stories, dispatchStories] = React.useReducer(storiesReducer,
     { data: [], isLoading: false, isError: false });
 
@@ -60,7 +61,7 @@ const App = () => {
   /*const [isError, setIsError] = React.useState(false)*/
 
   React.useEffect(() =>{
-    setIsLoading(true);
+    /*setIsLoading(true);*/
 
     getAsyncStories().then((result) => {
       // setStories(result.data.stories);
