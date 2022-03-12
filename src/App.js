@@ -37,6 +37,14 @@ const useSemiPersistentState = (key, initialState) => {
   return [value, setValue]
 }
 
+const storiesReducer = (state, action) => {
+  if(action.type === 'SET_STORIES') {
+    return action.payload;
+  } else {
+    throw new Error()
+  }
+}
+
 const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
