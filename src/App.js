@@ -64,7 +64,8 @@ const App = () => {
       dispatchStories({
         type: 'SET_STORIES',
         payload: value.data.stories
-      })
+      });
+
       setIsLoading(false);
     })
     .catch(()=> setIsError(true))
@@ -72,7 +73,12 @@ const App = () => {
 
   const handleRemoveStory = (item) => {
     const newStories = stories.filter((story) => item.objectID !== story.objectID);
-    setStories(newStories);
+    // setStories(newStories);
+
+    dispatchStories({
+      type: 'SET_STORIES',
+      payload: newStories
+    });
   }
 
   const handleSearch = (event) => {
