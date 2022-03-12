@@ -55,9 +55,9 @@ const App = () => {
   const [stories, dispatchStories] = React.useReducer(storiesReducer,
     { data: [], isLoading: false, isError: false });
 
-  const [isLoading, setIsLoading] = React.useState(false);
+  /*const [isLoading, setIsLoading] = React.useState(false);*/
 
-  const [isError, setIsError] = React.useState(false)
+  /*const [isError, setIsError] = React.useState(false)*/
 
   React.useEffect(() =>{
     setIsLoading(true);
