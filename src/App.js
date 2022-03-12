@@ -61,7 +61,10 @@ const App = () => {
 
     getAsyncStories().then((result) => {
       // setStories(result.data.stories);
-      dispatchStories()
+      dispatchStories({
+        type: 'SET_STORIES',
+        payload: value.data.stories
+      })
       setIsLoading(false);
     })
     .catch(()=> setIsError(true))
