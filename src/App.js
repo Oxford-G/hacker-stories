@@ -43,7 +43,7 @@ const storiesReducer = (state, action) => {
   } else {
     throw new Error()
   }
-}
+};
 
 const App = () => {
 
