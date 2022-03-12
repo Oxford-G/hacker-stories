@@ -40,7 +40,7 @@ const useSemiPersistentState = (key, initialState) => {
 const storiesReducer = (state, action) => {
   if(action.type === 'SET_STORIES') {
     return action.payload;
-  } else if(type === 'REMOVE_STORY'){
+  } else if(action.type === 'REMOVE_STORY'){
     return state.filter(story => action.payload.objectID !== story.objectID)
   } else{
     throw new Error()
@@ -65,7 +65,7 @@ const App = () => {
       // setStories(result.data.stories);
       dispatchStories({
         type: 'SET_STORIES',
-        payload: value.data.stories
+        payload: result.data.stories
       });
 
       setIsLoading(false);
@@ -81,10 +81,10 @@ const App = () => {
     });
     // setStories(newStories);
 
-    dispatchStories({
-      type: 'SET_STORIES',
-      payload: newStories
-    });
+    // dispatchStories({
+      // type: 'SET_STORIES',
+      // payload: newStories
+    // });
   }
 
   const handleSearch = (event) => {
