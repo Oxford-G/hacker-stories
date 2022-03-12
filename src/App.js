@@ -60,7 +60,8 @@ const App = () => {
     setIsLoading(true);
 
     getAsyncStories().then((result) => {
-      setStories(result.data.stories);
+      // setStories(result.data.stories);
+      dispatchStories()
       setIsLoading(false);
     })
     .catch(()=> setIsError(true))
