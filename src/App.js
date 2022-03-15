@@ -86,6 +86,8 @@ const App = () => {
   /*const [isError, setIsError] = React.useState(false)*/
 
   React.useEffect(() =>{
+    if (searchTerm === '') return;
+    
     /*setIsLoading(true);*/
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
     
