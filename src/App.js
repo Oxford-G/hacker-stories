@@ -84,7 +84,7 @@ const App = () => {
   /*const [isLoading, setIsLoading] = React.useState(false);*/
 
   /*const [isError, setIsError] = React.useState(false)*/
-  const handleFetchStories = React.useCallback()
+  const handleFetchStories = React.useCallback(()=>{})
   React.useEffect(() =>{
     if (searchTerm === '') return;
 
