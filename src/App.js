@@ -38,7 +38,9 @@ const useSemiPersistentState = (key, initialState) => {
 }
 
 const storiesReducer = (state, action) => {
-  
+  switch(action.payload) {
+    
+  }
 };
 
 const App = () => {
