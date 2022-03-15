@@ -73,7 +73,7 @@ const App = () => {
 
       setIsLoading(false);
     })
-    .catch(()=> setIsError(true))
+    .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
   }, [])
 
   const handleRemoveStory = (item) => {
