@@ -142,7 +142,8 @@ const App = () => {
       <p>loading ...</p>
     ) : (
 
-    < List list={searchedStories} onRemoveItem={handleRemoveStory} />
+    // < List list={searchedStories} onRemoveItem={handleRemoveStory} />
+    < List list={stories.data} onRemoveItem={handleRemoveStory} />
     )}
   </div>
 )};
