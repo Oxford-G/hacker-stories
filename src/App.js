@@ -54,10 +54,19 @@ const storiesReducer = (state, action) => {
       };
     case 'STORIES_FETCH_FAILURE':
       return {
-      ...state,
-      isLoading: false,
-      isError: true,
+        ...state,
+        isLoading: false,
+        isError: true,
       };
+    case 'REMOVE_STORY':
+      return {
+        ...state,
+        data: state.data.filter(
+        (story) => action.payload.objectID !== story.objectID
+        ),
+      };
+    default:
+      throw new Error();
   }
 };
 
