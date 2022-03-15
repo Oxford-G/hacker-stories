@@ -104,7 +104,7 @@ const App = () => {
       // setIsLoading(false);
     })
     .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
-  }, [])
+  }, [searchTerm])
 
   const handleRemoveStory = (item) => {
     // const newStories = stories.filter((story) => item.objectID !== story.objectID);
