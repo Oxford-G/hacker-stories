@@ -5,7 +5,7 @@ const welcome = {
   title: 'React'
 }
 
-const initialStories = [
+/*const initialStories = [
   {  title: 'React',
     url: 'https://reactjs.org/',
     author: 'Jordan Walke',
@@ -22,12 +22,14 @@ const initialStories = [
     points: 5,
     objectID: 1,
   }
-];
+];*/
 
-const getAsyncStories = () => 
+/*const getAsyncStories = () => 
   new Promise((resolve) => 
-    setTimeout(()=> resolve({data:{stories: initialStories}}), 2000) 
-  )
+    setTimeout(()=> resolve({data:{stories: initialStories}}), 2000)
+  );*/
+
+const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
 const useSemiPersistentState = (key, initialState) => {
   const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
