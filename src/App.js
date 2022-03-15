@@ -87,12 +87,12 @@ const App = () => {
 
   React.useEffect(() =>{
     if (searchTerm === '') return;
-    
+
     /*setIsLoading(true);*/
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
     
     // getAsyncStories()
-    fetch(`${API_ENDPOINT}react`).then(response => response.json())
+    fetch(`${API_ENDPOINT}${searchTerm}`).then(response => response.json())
     .then((result) => {
       // setStories(result.data.stories);
       dispatchStories({
