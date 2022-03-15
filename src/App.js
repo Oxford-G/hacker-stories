@@ -67,7 +67,7 @@ const App = () => {
     getAsyncStories().then((result) => {
       // setStories(result.data.stories);
       dispatchStories({
-        type: 'SET_STORIES',
+        type: 'STORIES_FETCH_SUCCESS',
         payload: result.data.stories
       });
 
