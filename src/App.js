@@ -84,7 +84,7 @@ const App = () => {
   /*const [isLoading, setIsLoading] = React.useState(false);*/
 
   /*const [isError, setIsError] = React.useState(false)*/
-  
+
   const handleFetchStories = React.useCallback(()=>{
     if (searchTerm === '') return;
 
@@ -106,7 +106,9 @@ const App = () => {
     .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
   }, [searchTerm])
   
-  React.useEffect(() =>{})
+  React.useEffect(() =>{
+    handleFetchStories();
+  }, [handleFetchStories])
 
   const handleRemoveStory = (item) => {
     // const newStories = stories.filter((story) => item.objectID !== story.objectID);
