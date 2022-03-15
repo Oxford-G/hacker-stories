@@ -51,7 +51,13 @@ const storiesReducer = (state, action) => {
         isLoading: false,
         isError: false,
         data: action.payload
-      }
+      };
+    case 'STORIES_FETCH_FAILURE':
+      return {
+      ...state,
+      isLoading: false,
+      isError: true,
+      };
   }
 };
 
