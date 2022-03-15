@@ -89,7 +89,9 @@ const App = () => {
     /*setIsLoading(true);*/
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
     
-    getAsyncStories().then((result) => {
+    // getAsyncStories()
+    fetch(`${API_ENDPOINT}react`).then(response => response.json())
+    .then((result) => {
       // setStories(result.data.stories);
       dispatchStories({
         type: 'STORIES_FETCH_SUCCESS',
