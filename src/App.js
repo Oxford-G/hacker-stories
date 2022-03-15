@@ -130,9 +130,9 @@ const App = () => {
 
     <hr />
     
-    {isError && <p>Something went wrong ...</p>}
+    {stories.isError && <p>Something went wrong ...</p>}
 
-    {isLoading ?(
+    {stories.isLoading ?(
 
       <p>loading ...</p>
     ) : (
