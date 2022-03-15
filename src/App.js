@@ -94,7 +94,7 @@ const App = () => {
         payload: result.data.stories
       });
 
-      setIsLoading(false);
+      // setIsLoading(false);
     })
     .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
   }, [])
@@ -117,7 +117,7 @@ const App = () => {
     setSearchTerm(event.target.value);
   }
 
-  const searchedStories = stories.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
