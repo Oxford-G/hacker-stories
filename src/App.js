@@ -95,7 +95,8 @@ const App = () => {
       // setStories(result.data.stories);
       dispatchStories({
         type: 'STORIES_FETCH_SUCCESS',
-        payload: result.data.stories
+        // payload: result.data.stories
+        payload: result.hits
       });
 
       // setIsLoading(false);
