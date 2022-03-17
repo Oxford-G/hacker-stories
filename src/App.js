@@ -117,11 +117,14 @@ const App = () => {
       // setIsLoading(false);
     // })
     // .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
-    const result = await axios.get(url);
-    dispatchStories({
-      type: 'STORIES_FETCH_SUCCESS',
-      payload: result.data.hits,
-      });
+    try{
+      const result = await axios.get(url);
+      dispatchStories({
+        type: 'STORIES_FETCH_SUCCESS',
+        payload: result.data.hits,
+        })
+    } catch{}
+;
   }, [url])
   
   React.useEffect(() =>{
