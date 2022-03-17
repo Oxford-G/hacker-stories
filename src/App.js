@@ -148,8 +148,9 @@ const App = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearchSubmit = () => {
+  const handleSearchSubmit = (event) => {
     setUrl(`${API_ENDPOINT}${searchTerm}`);
+    event.preventDefault();
   };
 
   /*const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
