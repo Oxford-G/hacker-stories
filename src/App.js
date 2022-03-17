@@ -96,7 +96,8 @@ const App = () => {
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
     
     // getAsyncStories()
-    fetch(`${API_ENDPOINT}${searchTerm}`).then(response => response.json())
+    // fetch(`${API_ENDPOINT}${searchTerm}`).then(response => response.json())
+    fetch(`${url}`).then(response => response.json())
     .then((result) => {
       // setStories(result.data.stories);
       dispatchStories({
@@ -108,7 +109,7 @@ const App = () => {
       // setIsLoading(false);
     })
     .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
-  }, [searchTerm])
+  }, [url])
   
   React.useEffect(() =>{
     handleFetchStories();
