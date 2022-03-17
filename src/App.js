@@ -159,17 +159,15 @@ const App = () => {
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
     <form onSubmit={handleSearchSubmit}>
-
-    </form>
-    <InputWithLabel 
-      id="search" 
-      isFocused 
-      value={searchTerm} 
-      // onInputChange={handleSearch}
-      onInputChange={handleSearchInput}
+      <InputWithLabel 
+        id="search" 
+        isFocused 
+        value={searchTerm} 
+        // onInputChange={handleSearch}
+        onInputChange={handleSearchInput}
       >
-      <strong>Search:</strong>
-    </InputWithLabel>
+        <strong>Search:</strong>
+      </InputWithLabel>
 
     <button
       type="button"
@@ -178,6 +176,8 @@ const App = () => {
     >
       Submit
     </button>
+    </form>
+
 
     <hr />
     
