@@ -1,4 +1,5 @@
-import * as React from 'react'
+import * as React from 'react';
+import axios from 'axios';
 
 const welcome = {
   greetings: 'Hey',
