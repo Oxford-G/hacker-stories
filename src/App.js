@@ -237,4 +237,10 @@ const List = ({list, onRemoveItem}) => (
     </li>
   )};
 
+  const SearchForm = ({
+    searchTerm,
+    onSearchInput,
+    onSearchSubmit,
+    }) => (g)
+
 export default App;
