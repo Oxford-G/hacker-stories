@@ -128,7 +128,7 @@ const App = () => {
     // });
   }
 
-  const handleSearch = (event) => {
+  const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
   }
 
