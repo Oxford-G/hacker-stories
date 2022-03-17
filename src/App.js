@@ -145,6 +145,14 @@ const App = () => {
       <strong>Search:</strong>
     </InputWithLabel>
 
+    <button
+type="button"
+disabled={!searchTerm}
+onClick={handleSearchSubmit}
+>
+Submit
+</button>
+
     <hr />
     
     {stories.isError && <p>Something went wrong ...</p>}
