@@ -105,7 +105,8 @@ const App = () => {
       dispatchStories({
         type: 'STORIES_FETCH_SUCCESS',
         // payload: result.data.stories
-        payload: result.hits
+        // i am using data since axios wraps the result into a data object in JavaScript
+        payload: result.data.hits
       });
 
       // setIsLoading(false);
