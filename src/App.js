@@ -146,12 +146,12 @@ const App = () => {
     </InputWithLabel>
 
     <button
-type="button"
-disabled={!searchTerm}
-onClick={handleSearchSubmit}
->
-Submit
-</button>
+      type="button"
+      disabled={!searchTerm}
+      onClick={handleSearchSubmit}
+    >
+      Submit
+    </button>
 
     <hr />
     
