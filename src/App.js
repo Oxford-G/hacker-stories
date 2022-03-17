@@ -169,13 +169,13 @@ const App = () => {
         <strong>Search:</strong>
       </InputWithLabel>
 
-    <button
-      type="button"
-      disabled={!searchTerm}
-      onClick={handleSearchSubmit}
-    >
+      <button
+        type="button"
+        disabled={!searchTerm}
+        onClick={handleSearchSubmit}
+      >
       Submit
-    </button>
+      </button>
     </form>
 
 
