@@ -98,7 +98,8 @@ const App = () => {
     
     // getAsyncStories()
     // fetch(`${API_ENDPOINT}${searchTerm}`).then(response => response.json())
-    fetch(`${url}`).then(response => response.json())
+    // fetch(`${url}`).then(response => response.json())
+    axios.get(url)
     .then((result) => {
       // setStories(result.data.stories);
       dispatchStories({
