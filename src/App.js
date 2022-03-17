@@ -128,14 +128,20 @@ const App = () => {
     setSearchTerm(event.target.value);
   }
 
-  const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  // const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
+  // )
 
   return (
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
 
-    <InputWithLabel id="search" isFocused value={searchTerm} onInputChange={handleSearch}>
+    <InputWithLabel 
+      id="search" 
+      isFocused 
+      value={searchTerm} 
+      // onInputChange={handleSearch}
+      onInputChange={handleSearchInput}
+      >
       <strong>Search:</strong>
     </InputWithLabel>
 
