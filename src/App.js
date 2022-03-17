@@ -123,9 +123,8 @@ const App = () => {
         type: 'STORIES_FETCH_SUCCESS',
         payload: result.data.hits,
         })
-    } catch{}
-;
-  }, [url])
+    } catch{dispatchStories({ type: 'STORIES_FETCH_FAILURE' })};
+  }, [url]);
   
   React.useEffect(() =>{
     handleFetchStories();
