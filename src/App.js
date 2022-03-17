@@ -76,6 +76,10 @@ const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
+  const [url, setUrl] = React.useState(
+    `${API_ENDPOINT}${searchTerm}`
+  );
+
   // const [stories, setStories] = React.useState([]);
 
   const [stories, dispatchStories] = React.useReducer(storiesReducer,
