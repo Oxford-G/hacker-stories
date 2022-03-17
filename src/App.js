@@ -170,14 +170,13 @@ const App = () => {
       </InputWithLabel>
 
       <button
-        type="button"
+        type="submit"
         disabled={!searchTerm}
-        onClick={handleSearchSubmit}
+        // onClick={handleSearchSubmit}
       >
       Submit
       </button>
     </form>
-
 
     <hr />
     
