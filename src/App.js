@@ -128,8 +128,8 @@ const App = () => {
     setSearchTerm(event.target.value);
   }
 
-  // const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
-  // )
+  /*const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )*/
 
   return (
   <div className="App">
