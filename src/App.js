@@ -248,6 +248,6 @@ const List = ({list, onRemoveItem}) => (
       Submit
       </button>
     </form>
-  )
+  );
 
 export default App;
