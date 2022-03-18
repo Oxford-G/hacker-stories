@@ -186,13 +186,13 @@ const SearchForm = ({
   onSearchInput,
   onSearchSubmit,
   }) => (
-    <form onSubmit={handleSearchSubmit}>
+    <form onSubmit={onSearchSubmit}>
     <InputWithLabel 
       id="search" 
       isFocused 
       value={searchTerm} 
       // onInputChange={handleSearch}
-      onInputChange={handleSearchInput}
+      onInputChange={onSearchInput}
     >
       <strong>Search:</strong>
     </InputWithLabel>
