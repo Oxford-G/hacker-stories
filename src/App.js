@@ -243,7 +243,7 @@ const List = ({list, onRemoveItem}) => (
   const Item = ({item, onRemoveItem}) => {
 
     return(
-    <li>
+    <li className="item">
     <span>
       <a href={item.url}>{item.title}</a>  
     </span>
