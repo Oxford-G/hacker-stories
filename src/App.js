@@ -102,28 +102,30 @@ const App = () => {
 
     // fetch(`${url}`).then(response => response.json())
 
-    // axios.get(url)
-    // .then((result) => {
+    axios.get(url)
+    .then((result) => {
 
       // setStories(result.data.stories);
 
-      // dispatchStories({
-        // type: 'STORIES_FETCH_SUCCESS',
-        // payload: result.data.stories
-        // i am using data since axios wraps the result into a data object in JavaScript
-        // payload: result.data.hits
-      // });
-
-      // setIsLoading(false);
-    // })
-    // .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
-    try{
-      const result = await axios.get(url);
       dispatchStories({
         type: 'STORIES_FETCH_SUCCESS',
-        payload: result.data.hits,
-        })
-    } catch{dispatchStories({ type: 'STORIES_FETCH_FAILURE' })};
+        // payload: result.data.stories
+        // i am using data since axios wraps the result into a data object in JavaScript
+        payload: result.data.hits
+      });
+
+      // setIsLoading(false);
+    })
+    .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
+    // try {
+    //   const result = await axios.get(url);
+    //   dispatchStories({
+    //     type: 'STORIES_FETCH_SUCCESS',
+    //     payload: result.data.hits,
+    //     })
+    // } catch{
+    //   dispatchStories({ type: 'STORIES_FETCH_FAILURE' })
+    // };
   }, [url]);
   
   React.useEffect(() =>{
