@@ -159,25 +159,12 @@ const App = () => {
   return (
   <div className="App">
     <h1>{welcome.greetings} {welcome.title}</h1>
-    <form onSubmit={handleSearchSubmit}>
-      <InputWithLabel 
-        id="search" 
-        isFocused 
-        value={searchTerm} 
-        // onInputChange={handleSearch}
-        onInputChange={handleSearchInput}
-      >
-        <strong>Search:</strong>
-      </InputWithLabel>
 
-      <button
-        type="submit"
-        disabled={!searchTerm}
-        // onClick={handleSearchSubmit}
-      >
-      Submit
-      </button>
-    </form>
+    <SearchForm
+      searchTerm={searchTerm}
+      onSearchInput={handleSearchInput}
+      onSearchSubmit={handleSearchSubmit}
+    />
 
     <hr />
     
@@ -241,6 +228,26 @@ const List = ({list, onRemoveItem}) => (
     searchTerm,
     onSearchInput,
     onSearchSubmit,
-    }) => (g)
+    }) => (
+      <form onSubmit={handleSearchSubmit}>
+      <InputWithLabel 
+        id="search" 
+        isFocused 
+        value={searchTerm} 
+        // onInputChange={handleSearch}
+        onInputChange={handleSearchInput}
+      >
+        <strong>Search:</strong>
+      </InputWithLabel>
+
+      <button
+        type="submit"
+        disabled={!searchTerm}
+        // onClick={handleSearchSubmit}
+      >
+      Submit
+      </button>
+    </form>
+    )
 
 export default App;
