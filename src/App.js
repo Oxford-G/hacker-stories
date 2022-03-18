@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
+import './App.css';
 
 const welcome = {
   greetings: 'Hey',
@@ -162,7 +163,7 @@ const App = () => {
   <div className="container">
   
     <h1 className="headline-primary">My Hacker Stories</h1>
-    
+
     <h1>{welcome.greetings} {welcome.title}</h1>
 
     <SearchForm
