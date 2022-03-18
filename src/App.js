@@ -159,7 +159,7 @@ const App = () => {
   )*/
 
   return (
-  <div className="App">
+  <div className="container">
     <h1>{welcome.greetings} {welcome.title}</h1>
 
     <SearchForm
