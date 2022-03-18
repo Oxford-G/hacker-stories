@@ -181,6 +181,32 @@ const App = () => {
   </div>
 )};
 
+const SearchForm = ({
+  searchTerm,
+  onSearchInput,
+  onSearchSubmit,
+  }) => (
+    <form onSubmit={handleSearchSubmit}>
+    <InputWithLabel 
+      id="search" 
+      isFocused 
+      value={searchTerm} 
+      // onInputChange={handleSearch}
+      onInputChange={handleSearchInput}
+    >
+      <strong>Search:</strong>
+    </InputWithLabel>
+
+    <button
+      type="submit"
+      disabled={!searchTerm}
+      // onClick={handleSearchSubmit}
+    >
+    Submit
+    </button>
+  </form>
+);
+
 const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
 
   const inputRef = React.useRef();
@@ -223,31 +249,5 @@ const List = ({list, onRemoveItem}) => (
     </span>
     </li>
   )};
-
-  const SearchForm = ({
-    searchTerm,
-    onSearchInput,
-    onSearchSubmit,
-    }) => (
-      <form onSubmit={handleSearchSubmit}>
-      <InputWithLabel 
-        id="search" 
-        isFocused 
-        value={searchTerm} 
-        // onInputChange={handleSearch}
-        onInputChange={handleSearchInput}
-      >
-        <strong>Search:</strong>
-      </InputWithLabel>
-
-      <button
-        type="submit"
-        disabled={!searchTerm}
-        // onClick={handleSearchSubmit}
-      >
-      Submit
-      </button>
-    </form>
-  );
 
 export default App;
