@@ -251,7 +251,9 @@ const List = ({list, onRemoveItem}) => (
     <span style={{ width: '10%' }}>{item.num_comments}</span>
     <span style={{ width: '10%' }}>{item.points}</span>
     <span>
-      <button type="button" onClick={()=>onRemoveItem(item)}>Dismiss</button>
+      <button className="button button_small" type="button" onClick={()=>onRemoveItem(item)}>
+        Dismiss
+      </button>
     </span>
     </li>
   )};
