@@ -160,9 +160,9 @@ const App = () => {
   )*/
 
   return (
-  <div className="container">
+  <div className={styles.container}>
   
-    <h1 className="headline-primary">My Hacker Stories</h1>
+    <h1 className={styles.headlinePrimary}>My Hacker Stories</h1>
 
     <h1>{welcome.greetings} {welcome.title}</h1>
 
