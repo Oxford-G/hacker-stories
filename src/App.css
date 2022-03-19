@@ -29,3 +29,24 @@
 .item > span > a {
   color: inherit;
 }
+
+.button {
+  background: transparent;
+  border: 1px solid #171212;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.button:hover {
+  background: #171212;
+  color: #ffffff;
+}
+
+.button_small {
+  padding: 5px;
+}
+
+.button_large {
+  padding: 10px;
+}

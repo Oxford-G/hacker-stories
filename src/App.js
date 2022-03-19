@@ -192,7 +192,7 @@ const SearchForm = ({
   onSearchInput,
   onSearchSubmit,
   }) => (
-    <form onSubmit={onSearchSubmit}>
+    <form onSubmit={onSearchSubmit} className="search-form">
     <InputWithLabel 
       id="search" 
       isFocused 
@@ -206,6 +206,7 @@ const SearchForm = ({
     <button
       type="submit"
       disabled={!searchTerm}
+      className="button button_large"
       // onClick={handleSearchSubmit}
     >
     Submit
@@ -226,8 +227,8 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 
   return(
     <>
-      <label htmlFor={id}>{children}:</label>
-      <input ref={inputRef} type={type} value={value} onChange={onInputChange} />
+      <label htmlFor={id} className="label">{children}:</label>
+      <input ref={inputRef} type={type} value={value} onChange={onInputChange} className="input"/>
     </>
   )
 }
