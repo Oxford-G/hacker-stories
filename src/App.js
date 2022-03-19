@@ -175,9 +175,9 @@ const App = () => {
   )*/
 
   return (
-  <div className={styles.container}>
+  <StyledContainer>
   
-    <h1 className={styles.headlinePrimary}>My Hacker Stories</h1>
+    <StyledHeadlinePrimary>My Hacker Stories</StyledHeadlinePrimary>
 
     <h1>{welcome.greetings} {welcome.title}</h1>
 
@@ -199,7 +199,7 @@ const App = () => {
     // < List list={searchedStories} onRemoveItem={handleRemoveStory} />
     < List list={stories.data} onRemoveItem={handleRemoveStory} />
     )}
-  </div>
+  </StyledContainer>
 )};
 
 const SearchForm = ({
@@ -259,19 +259,19 @@ const List = ({list, onRemoveItem}) => (
   const Item = ({item, onRemoveItem}) => {
 
     return(
-    <li className={styles.item}>
-    <span style={{width: '40%'}}>
+    <StyledItem>
+    <StyledColumn width="40%">
       <a href={item.url}>{item.title}</a>  
-    </span>
-    <span style={{ width: '30%' }}>{item.author}</span>
-    <span style={{ width: '10%' }}>{item.num_comments}</span>
-    <span style={{ width: '10%' }}>{item.points}</span>
-    <span style={{ width: '10%' }}>
-      <button className={`${styles.button} ${styles.buttonSmall}`} type="button" onClick={()=>onRemoveItem(item)}>
+    </StyledColumn>
+    <StyledColumn width="30%">{item.author}</StyledColumn>
+    <StyledColumn width="10%">{item.num_comments}</StyledColumn>
+    <StyledColumn width="10%">{item.points}</StyledColumn>
+    <StyledColumn width="10%">
+      <StyledButtonSmall type="button" onClick={()=>onRemoveItem(item)}>
         Dismiss
-      </button>
-    </span>
-    </li>
+      </StyledButtonSmall>
+    </StyledColumn>
+    </StyledItem>
   )};
 
 export default App;
