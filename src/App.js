@@ -22,6 +22,24 @@ font-weight: 300;
 letter-spacing: 2px;
 `;
 
+const StyledItem = styled.li`
+display: flex;
+align-items: center;
+padding-bottom: 5px;
+`;
+
+const StyledColumn = styled.span`
+padding: 0 5px;
+white-space: nowrap;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+a {
+color: inherit;
+}
+width: ${(props) => props.width};
+`;
+
 /*const initialStories = [
   {  title: 'React',
     url: 'https://reactjs.org/',
