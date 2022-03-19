@@ -1,6 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
-import styles from './App.module.css';
+// import styles from './App.module.css';
+import styled from 'styled-components';
 
 const welcome = {
   greetings: 'Hey',
