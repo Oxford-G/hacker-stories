@@ -1,6 +1,5 @@
 import * as React from 'react';
 import axios from 'axios';
-// import styles from './App.module.css';
 import styled from 'styled-components';
 
 const welcome = {
@@ -38,6 +37,46 @@ a {
 color: inherit;
 }
 width: ${(props) => props.width};
+`;
+
+const StyledButton = styled.button`
+background: transparent;
+border: 1px solid #171212;
+padding: 5px;
+cursor: pointer;
+transition: all 0.1s ease-in;
+&:hover {
+background: #171212;
+color: #ffffff;
+}
+`;
+
+const StyledButtonSmall = styled(StyledButton)`
+padding: 5px;
+`;
+
+const StyledButtonLarge = styled(StyledButton)`
+padding: 10px;
+`;
+
+const StyledSearchForm = styled.form`
+padding: 10px 0 20px 0;
+display: flex;
+align-items: baseline;
+`;
+
+const StyledLabel = styled.label`
+border-top: 1px solid #171212;
+border-left: 1px solid #171212;
+padding-left: 5px;
+font-size: 24px;
+`;
+
+const StyledInput = styled.input`
+border: none;
+border-bottom: 1px solid #171212;
+background-color: transparent;
+font-size: 24px;
 `;
 
 /*const initialStories = [
@@ -225,7 +264,7 @@ const SearchForm = ({
   onSearchInput,
   onSearchSubmit,
   }) => (
-    <form onSubmit={onSearchSubmit} className={styles.searchForm}>
+    <StyledSearchForm onSubmit={onSearchSubmit}>
     <InputWithLabel 
       id="search" 
       isFocused 
@@ -236,15 +275,14 @@ const SearchForm = ({
       <strong>Search:</strong>
     </InputWithLabel>
 
-    <button
+    <StyledButtonLarge
       type="submit"
       disabled={!searchTerm}
-      className={`${styles.button} ${styles.buttonLarge}`}
       // onClick={handleSearchSubmit}
     >
     Submit
-    </button>
-  </form>
+    </StyledButtonLarge>
+  </StyledSearchForm>
 );
 
 const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
@@ -260,8 +298,8 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 
   return(
     <>
-      <label htmlFor={id} className={styles.label}>{children}:</label>
-      <input ref={inputRef} type={type} value={value} onChange={onInputChange} className={styles.input}/>
+      <StyledLabel htmlFor={id}>{children}:</StyledLabel>
+      <StyledInput ref={inputRef} type={type} value={value} onChange={onInputChange} />
     </>
   )
 }
