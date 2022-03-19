@@ -1,6 +1,9 @@
 import * as React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { ReactComponent as Check } from './square-check-solid.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 const welcome = {
   greetings: 'Hey',
@@ -324,7 +327,7 @@ const List = ({list, onRemoveItem}) => (
     <StyledColumn width="10%">{item.points}</StyledColumn>
     <StyledColumn width="10%">
       <StyledButtonSmall type="button" onClick={()=>onRemoveItem(item)}>
-        Dismiss
+      <FontAwesomeIcon icon="fa-solid fa-square-xmark" height="18px" width="18px"/>
       </StyledButtonSmall>
     </StyledColumn>
     </StyledItem>
