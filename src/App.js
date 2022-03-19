@@ -1,9 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { ReactComponent as Check } from './square-check-solid.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { ReactComponent as Check } from './delete.svg';
 
 const welcome = {
   greetings: 'Hey',
@@ -77,6 +75,7 @@ font-size: 24px;
 
 const StyledInput = styled.input`
 border: none;
+border-top: 1px solid #171212;
 border-bottom: 1px solid #171212;
 background-color: transparent;
 font-size: 24px;
@@ -327,7 +326,7 @@ const List = ({list, onRemoveItem}) => (
     <StyledColumn width="10%">{item.points}</StyledColumn>
     <StyledColumn width="10%">
       <StyledButtonSmall type="button" onClick={()=>onRemoveItem(item)}>
-      <FontAwesomeIcon icon="fa-solid fa-square-xmark" height="18px" width="18px"/>
+      <Check height="18px" width="18px"/>
       </StyledButtonSmall>
     </StyledColumn>
     </StyledItem>
