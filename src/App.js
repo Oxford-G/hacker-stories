@@ -1,6 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
-import './App.css';
+import styles from './App.module.css';
 
 const welcome = {
   greetings: 'Hey',
