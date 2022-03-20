@@ -217,7 +217,7 @@ const App = () => {
     handleFetchStories();
   }, [handleFetchStories])
 
-  const handleRemoveStory = (item) => {
+  const handleRemoveStory = React.useCallback((item) => {
     // const newStories = stories.filter((story) => item.objectID !== story.objectID);
     dispatchStories({
       type: 'REMOVE_STORY',
@@ -229,7 +229,7 @@ const App = () => {
       // type: 'SET_STORIES',
       // payload: newStories
     // });
-  }
+  }, [])
 
   const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
