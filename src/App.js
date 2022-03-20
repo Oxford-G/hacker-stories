@@ -251,7 +251,7 @@ const App = () => {
   )*/
   console.log('B:App');
 
-  const sumComments = getSumComments(stories);
+  const sumComments = React.useMemo(()=> getSumComments(stories), [stories])
 
   return (
   <StyledContainer>
