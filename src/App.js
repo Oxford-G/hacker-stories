@@ -108,6 +108,7 @@ font-size: 24px;
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
 const useSemiPersistentState = (key, initialState) => {
+  
   const isMounted = React.useRef(false);
 
   const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
@@ -118,7 +119,6 @@ const useSemiPersistentState = (key, initialState) => {
     React.useEffect(() => {localStorage.setItem(key, value)}, [value, key])
   }
   
-
   return [value, setValue]
 }
 
