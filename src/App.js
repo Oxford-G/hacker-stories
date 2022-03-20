@@ -108,19 +108,22 @@ font-size: 24px;
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
 const useSemiPersistentState = (key, initialState) => {
-  
+
   const isMounted = React.useRef(false);
 
   const [value, setValue] = React.useState(localStorage.getItem(key) || initialState);
 
-  if(!isMounted.current){
-    isMounted.current = true
-  } else {
-    React.useEffect(() => {localStorage.setItem(key, value)}, [value, key])
-  }
+  React.useEffect(() => {
+
+    if(!isMounted.current) {
+      isMounted.current = true
+    } else {
+      localStorage.setItem(key, value);
+    }
+  },[value, key]);
   
   return [value, setValue]
-}
+};
 
 const storiesReducer = (state, action) => {
   switch(action.type) {
@@ -239,7 +242,7 @@ const App = () => {
 
   /*const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
   )*/
-
+  console.log('B:App');
   return (
   <StyledContainer>
   
@@ -313,13 +316,15 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
   )
 }
 
-const List = ({list, onRemoveItem}) => (
+const List = React.memo(
+  ({list, onRemoveItem}) => console.log('B:List') || (
   <ul>
     {list.map((item) => (
       <Item key={item.objectID} item = {item} onRemoveItem={onRemoveItem}/>
     ))}
   </ul>
-  );
+  )
+);
 
   const Item = ({item, onRemoveItem}) => {
 
