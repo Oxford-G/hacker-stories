@@ -160,7 +160,7 @@ const storiesReducer = (state, action) => {
 
 const getSumComments = (stories) => {
   console.log('C');
-  
+
   return stories.data.reduce(
     (result, value) => result + value.num_comments, 0)
 };
@@ -250,10 +250,13 @@ const App = () => {
   /*const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
   )*/
   console.log('B:App');
+
+  const sumComments = getSumComments(stories);
+
   return (
   <StyledContainer>
   
-    <StyledHeadlinePrimary>My Hacker Stories</StyledHeadlinePrimary>
+    <StyledHeadlinePrimary>My Hacker Stories with {sumComments} comments</StyledHeadlinePrimary>
 
     <h1>{welcome.greetings} {welcome.title}</h1>
 
