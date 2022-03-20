@@ -158,7 +158,10 @@ const storiesReducer = (state, action) => {
   }
 };
 
-const getSumComments = () => {}
+const getSumComments = (stories) => {
+  return stories.data.reduce(
+    (result, value) => result + value.num_comments, 0)
+};
 const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
