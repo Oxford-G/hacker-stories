@@ -327,7 +327,7 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 }
 
 const List = React.memo(
-  ({list, onRemoveItem}) => console.log('B:List') || (
+  ({list, onRemoveItem}) => (
   <ul>
     {list.map((item) => (
       <Item key={item.objectID} item = {item} onRemoveItem={onRemoveItem}/>
