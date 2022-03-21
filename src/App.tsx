@@ -282,11 +282,11 @@ const App = () => {
     // });
   }, [])
 
-  const handleSearchInput = (event) => {
+  const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearchSubmit = (event) => {
+  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setUrl(`${API_ENDPOINT}${searchTerm}`);
     event.preventDefault();
   };
@@ -325,11 +325,17 @@ const App = () => {
   </StyledContainer>
 )};
 
+type SearchFormProps = {
+  searchTerm: string;
+  onSearchInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearchSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+};
+
 const SearchForm = ({
   searchTerm,
   onSearchInput,
   onSearchSubmit,
-  }) => (
+  }: SearchFormProps) => (
     <StyledSearchForm onSubmit={onSearchSubmit}>
     <InputWithLabel 
       id="search" 
