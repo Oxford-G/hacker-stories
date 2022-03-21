@@ -177,6 +177,8 @@ type Story = {
   points: number;
 };
 
+type Stories = Array<Story>;
+
 const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
@@ -337,6 +339,11 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
     </>
   )
 }
+
+type ListProps = {
+  list: Stories;
+  onRemoveItem: (item: Story) => void;
+};
 
 const List = React.memo(
   ({list, onRemoveItem}) => (
