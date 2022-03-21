@@ -168,6 +168,10 @@ const getSumComments = (stories) => {
     (result, value) => result + value.num_comments, 0)
 };
 
+type Story = {
+
+}
+
 const App = () => {
 
   const[searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
