@@ -107,7 +107,10 @@ font-size: 24px;
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
-const useSemiPersistentState = (key: string, initialState: string) => {
+const useSemiPersistentState = (
+  key: string,
+  initialState: string
+  ): [string, (newValue: string) => void] => {
 
   const isMounted = React.useRef(false);
 
