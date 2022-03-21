@@ -128,7 +128,37 @@ const useSemiPersistentState = (
   return [value, setValue]
 };
 
-const storiesReducer = (state, action) => {
+type StoriesState = {
+  data: Stories;
+  isLoading: boolean;
+  isError: boolean;
+};
+
+interface StoriesFetchInitAction {
+  type: 'STORIES_FETCH_INIT';
+};
+
+interface StoriesFetchSuccessAction {
+  type: 'STORIES_FETCH_SUCCESS';
+  payload: Stories;
+};
+
+interface StoriesFetchFailureAction {
+  type: 'STORIES_FETCH_FAILURE';
+};
+
+interface StoriesRemoveAction {
+  type: 'REMOVE_STORY';
+  payload: Story;
+};
+
+type StoriesAction =
+| StoriesFetchInitAction
+| StoriesFetchSuccessAction
+| StoriesFetchFailureAction
+| StoriesRemoveAction;
+
+const storiesReducer = (state: StoriesState, action: StoriesAction) => {
   switch(action.type) {
     case 'STORIES_FETCH_INIT':
       return {
@@ -238,7 +268,7 @@ const App = () => {
     handleFetchStories();
   }, [handleFetchStories])
 
-  const handleRemoveStory = React.useCallback((item) => {
+  const handleRemoveStory = React.useCallback((item: Story) => {
     // const newStories = stories.filter((story) => item.objectID !== story.objectID);
     dispatchStories({
       type: 'REMOVE_STORY',
