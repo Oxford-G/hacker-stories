@@ -354,11 +354,7 @@ type ItemProps = {
 };
 
 const Item = (
-  {item,
-  onRemoveItem
-  }: ItemProps) => {
-
-  return(
+  {item, onRemoveItem}: ItemProps) => (
   <StyledItem>
   <StyledColumn width="40%">
     <a href={item.url}>{item.title}</a>  
@@ -372,6 +368,6 @@ const Item = (
     </StyledButtonSmall>
   </StyledColumn>
   </StyledItem>
-)};
+);
 
 export default App;
