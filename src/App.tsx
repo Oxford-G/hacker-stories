@@ -346,7 +346,7 @@ type ListProps = {
 };
 
 const List = React.memo(
-  ({list, onRemoveItem}) => (
+  ({list, onRemoveItem}: ListProps) => (
   <ul>
     {list.map((item) => (
       <Item key={item.objectID} item = {item} onRemoveItem={onRemoveItem}/>
