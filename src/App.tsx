@@ -366,7 +366,7 @@ type InputWithLabelProps = {
   children: React.ReactNode;
 };
 
-const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
+const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}: InputWithLabelProps) => {
 
   const inputRef = React.useRef<HTMLInputElement>(null!);
 
