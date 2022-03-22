@@ -359,7 +359,7 @@ const SearchForm = ({
 
 const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
 
-  const inputRef = React.useRef();
+  const inputRef = React.useRef<HTMLInputElement>(null!);
 
   React.useEffect(() => {
       if(isFocused && inputRef.current){
