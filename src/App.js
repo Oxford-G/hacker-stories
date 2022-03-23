@@ -108,9 +108,9 @@ font-size: 24px;
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
 const useSemiPersistentState = (
-  key: string,
-  initialState: string
-  ): [string, (newValue: string) => void] => {
+  key,
+  initialState
+  ) => {
 
   const isMounted = React.useRef(false);
 
@@ -128,37 +128,7 @@ const useSemiPersistentState = (
   return [value, setValue]
 };
 
-type StoriesState = {
-  data: Stories;
-  isLoading: boolean;
-  isError: boolean;
-};
-
-interface StoriesFetchInitAction {
-  type: 'STORIES_FETCH_INIT';
-};
-
-interface StoriesFetchSuccessAction {
-  type: 'STORIES_FETCH_SUCCESS';
-  payload: Stories;
-};
-
-interface StoriesFetchFailureAction {
-  type: 'STORIES_FETCH_FAILURE';
-};
-
-interface StoriesRemoveAction {
-  type: 'REMOVE_STORY';
-  payload: Story;
-};
-
-type StoriesAction =
-| StoriesFetchInitAction
-| StoriesFetchSuccessAction
-| StoriesFetchFailureAction
-| StoriesRemoveAction;
-
-const storiesReducer = (state: StoriesState, action: StoriesAction) => {
+const storiesReducer = (state, action) => {
   switch(action.type) {
     case 'STORIES_FETCH_INIT':
       return {
@@ -197,17 +167,6 @@ const getSumComments = (stories) => {
   return stories.data.reduce(
     (result, value) => result + value.num_comments, 0)
 };
-
-type Story = {
-  objectID: string;
-  url: string;
-  title: string;
-  author: string;
-  num_comments: number;
-  points: number;
-};
-
-type Stories = Array<Story>;
 
 const App = () => {
 
@@ -268,7 +227,7 @@ const App = () => {
     handleFetchStories();
   }, [handleFetchStories])
 
-  const handleRemoveStory = React.useCallback((item: Story) => {
+  const handleRemoveStory = React.useCallback((item) => {
     // const newStories = stories.filter((story) => item.objectID !== story.objectID);
     dispatchStories({
       type: 'REMOVE_STORY',
@@ -282,11 +241,11 @@ const App = () => {
     // });
   }, [])
 
-  const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSearchSubmit = (event) => {
     setUrl(`${API_ENDPOINT}${searchTerm}`);
     event.preventDefault();
   };
@@ -325,17 +284,11 @@ const App = () => {
   </StyledContainer>
 )};
 
-type SearchFormProps = {
-  searchTerm: string;
-  onSearchInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onSearchSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-};
-
 const SearchForm = ({
   searchTerm,
   onSearchInput,
   onSearchSubmit,
-  }: SearchFormProps) => (
+  }) => (
     <StyledSearchForm onSubmit={onSearchSubmit}>
     <InputWithLabel 
       id="search" 
@@ -357,18 +310,9 @@ const SearchForm = ({
   </StyledSearchForm>
 );
 
-type InputWithLabelProps = {
-  id: string;
-  value: string;
-  type?: string;
-  onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  isFocused?: boolean;
-  children: React.ReactNode;
-};
+const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
 
-const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}: InputWithLabelProps) => {
-
-  const inputRef = React.useRef<HTMLInputElement>(null!);
+  const inputRef = React.useRef();
 
   React.useEffect(() => {
       if(isFocused && inputRef.current){
@@ -385,13 +329,8 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
   )
 }
 
-type ListProps = {
-  list: Stories;
-  onRemoveItem: (item: Story) => void;
-};
-
 const List = React.memo(
-  ({list, onRemoveItem}: ListProps) => (
+  ({list, onRemoveItem}) => (
   <ul>
     {list.map((item) => (
       <Item key={item.objectID} item = {item} onRemoveItem={onRemoveItem}/>
@@ -400,13 +339,8 @@ const List = React.memo(
   )
 );
 
-type ItemProps = {
-  item: Story;
-  onRemoveItem: (item: Story) => void;
-};
-
 const Item = (
-  {item, onRemoveItem}: ItemProps) => (
+  {item, onRemoveItem}) => (
   <StyledItem>
   <StyledColumn width="40%">
     <a href={item.url}>{item.title}</a>  
