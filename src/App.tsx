@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { ReactComponent as Check } from './delete.svg';
+// import { ReactComponent as Check } from './delete.svg';
 
 const welcome = {
   greetings: 'Hey',
@@ -416,7 +416,8 @@ const Item = (
   <StyledColumn width="10%">{item.points}</StyledColumn>
   <StyledColumn width="10%">
     <StyledButtonSmall type="button" onClick={()=>onRemoveItem(item)}>
-    <Check height="18px" width="18px"/>
+    {/* <Check height="18px" width="18px"/> */}
+    Button
     </StyledButtonSmall>
   </StyledColumn>
   </StyledItem>
