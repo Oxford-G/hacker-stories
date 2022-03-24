@@ -7,6 +7,13 @@ import App, {
   InputWithLabel,
   } from './App';
 
+  import {
+    render,
+    screen,
+    fireEvent,
+    act,
+  } from '@testing-library/react';
+
 describe('something truthy and falsy', () => {
   test('true to be true', ()=> {
     expect(true).toBe(true)
@@ -53,4 +60,40 @@ describe('storiesReducer', () => {
 
     expect(newState).toStrictEqual(expectedState);
   });
+
+  test('initial loading of the app', ()=> {
+    const action = {type: 'STORIES_FETCH_INIT'};
+
+    const state = {data:[], isLoading: false, isError: false};
+
+    const newState = storiesReducer(state, action);
+
+    const expectedState = {data: [], isLoading: true, isError: false};
+
+    expect(newState).toStrictEqual(expectedState)
+  });
+
+  test('succesful fetch', ()=> {
+    const action = {type: 'STORIES_FETCH_SUCCESS', payload: stories};
+
+    const state = {data: [], isLoading: false, isError: false};
+
+    const newState = storiesReducer(state, action);
+
+    const expectedState = {data: stories, isLoading: false, isError: false};
+
+    expect(newState).toStrictEqual(expectedState)
+  })
+
+  test('failed fetch', ()=> {
+    const action = {type: 'STORIES_FETCH_FAILURE'}
+
+    const state = {data: [], isLoading: false, isError: false};
+
+    const newState = storiesReducer(state, action)
+
+    const expectedState = {data: [], isLoading: false, isError: true};
+
+    expect(newState).toStrictEqual(expectedState)
+  })
 });
