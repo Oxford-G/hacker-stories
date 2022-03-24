@@ -99,5 +99,22 @@ describe('Item', ()=> {
   test('renders a clickable dismiss button', ()=> {
     render(< Item item={stories}/>)
 
+    expect(screen.getByRole('button')).toBeInTheDocument()
+  })
+
+  test('clicking the dismiss button calls the callback handler', ()=> {
+    const handleRemoveItem = () => jest.fn();
+
+    render(< Item item={stories} onRemoveItem={handleRemoveItem}/>);
+    fireEvent.click(screen.getByRole('button'));
+    expect(handleRemoveItem).toHaveBeenCalledTimes(1)
   })
 });
+
+describe('SearchForm', ()=> {
+  const searchFormProps = {
+    searchTerm: 'React',
+  onSearchInput: jest.fn(),
+  onSearchSubmit: jest.fn(),
+  }
+})
