@@ -114,7 +114,11 @@ describe('Item', ()=> {
 describe('SearchForm', ()=> {
   const searchFormProps = {
     searchTerm: 'React',
-  onSearchInput: jest.fn(),
-  onSearchSubmit: jest.fn(),
-  }
+    onSearchInput: jest.fn(),
+    onSearchSubmit: jest.fn(),
+  };
+
+  test('renders the input field with its value', ()=> {
+    render(<SearchForm {...searchFormProps}/>)
+  })
 })
