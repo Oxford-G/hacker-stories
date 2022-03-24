@@ -14,16 +14,6 @@ import App, {
     act,
   } from '@testing-library/react';
 
-describe('something truthy and falsy', () => {
-  test('true to be true', ()=> {
-    expect(true).toBe(true)
-  });
-
-  test('false to be false', ()=> {
-    expect(false).toBe(false)
-  })
-})
-
 const storyOne = {
   title: 'React',
   url: 'https://reactjs.org/',
@@ -96,4 +86,10 @@ describe('storiesReducer', () => {
 
     expect(newState).toStrictEqual(expectedState)
   })
+});
+
+describe('Item', ()=> {
+  test('renders all properties', ()=> {
+    render(<Item item={storyOne} />)
+  });
 });
