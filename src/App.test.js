@@ -103,7 +103,7 @@ describe('Item', ()=> {
   })
 
   test('clicking the dismiss button calls the callback handler', ()=> {
-    const handleRemoveItem = () => jest.fn();
+    const handleRemoveItem = jest.fn();
 
     render(< Item item={stories} onRemoveItem={handleRemoveItem}/>);
     fireEvent.click(screen.getByRole('button'));
@@ -120,5 +120,6 @@ describe('SearchForm', ()=> {
 
   test('renders the input field with its value', ()=> {
     render(<SearchForm {...searchFormProps}/>)
+    expect(screen.getByDisplayValue('React')).toBeInTheDocument()
   })
 })
