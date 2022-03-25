@@ -185,11 +185,21 @@ const App = () => {
 
   /*const [isError, setIsError] = React.useState(false)*/
 
-  const handleFetchStories = React.useCallback(()=>{
+  const handleFetchStories = React.useCallback(async ()=>{
     if (searchTerm === '') return;
 
     /*setIsLoading(true);*/
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
+    
+    try {
+      const result = await axios.get(url);
+      dispatchStories({
+        type: 'STORIES_FETCH_SUCCESS',
+        payload: result.data.hits,
+        })
+    } catch{
+      dispatchStories({ type: 'STORIES_FETCH_FAILURE' })
+    };
     
     // getAsyncStories()
 
@@ -197,7 +207,7 @@ const App = () => {
 
     // fetch(`${url}`).then(response => response.json())
 
-    axios.get(url)
+    /*axios.get(url)
     .then((result) => {
 
       // setStories(result.data.stories);
@@ -211,16 +221,9 @@ const App = () => {
 
       // setIsLoading(false);
     })
-    .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
-    // try {
-    //   const result = await axios.get(url);
-    //   dispatchStories({
-    //     type: 'STORIES_FETCH_SUCCESS',
-    //     payload: result.data.hits,
-    //     })
-    // } catch{
-    //   dispatchStories({ type: 'STORIES_FETCH_FAILURE' })
-    // };
+    */
+    
+    // .catch(()=> dispatchStories({ type: 'STORIES_FETCH_FAILURE' }))
   }, [url]);
   
   React.useEffect(() =>{
