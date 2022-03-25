@@ -122,4 +122,41 @@ describe('SearchForm', ()=> {
     render(<SearchForm {...searchFormProps}/>)
     expect(screen.getByDisplayValue('React')).toBeInTheDocument()
   })
+
+  // test('renders the correct label', () => {
+  //   render(<SearchForm {...searchFormProps} />);
+  //   expect(screen.getByLabelText(/Search/)).toBeInTheDocument();
+  // });
+
+  test('calls onSearchInput on input field change', ()=> {
+    render(<SearchForm {...searchFormProps} />);
+    fireEvent.change(screen.getByDisplayValue('React'), {
+      target: {value: 'Redux'}
+    })
+    expect(searchFormProps.onSearchInput).toHaveBeenCalledTimes(1)
+  })
+
+  test('calls onSearchSubmit on button submit click', () => {
+    render(<SearchForm {...searchFormProps} />);
+    fireEvent.submit(screen.getByRole('button'));
+    expect(searchFormProps.onSearchSubmit).toHaveBeenCalledTimes(1);
+  });
+})
+
+describe('List', ()=> {
+  test('render all property', ()=> {
+    render(<List list={stories}/>)
+    expect(screen.getByText('Jordan Walke')).toBeInTheDocument()
+    expect(screen.getByText('Dan Abramov, Andrew Clark')).toBeInTheDocument()
+    expect(screen.getByText('React')).toHaveAttribute('href', 'https://reactjs.org/')
+    expect(screen.getByText('Redux')).toHaveAttribute('href', 'https://redux.js.org/')
+    
+  });
+
+  // test('renders a clickable dismiss button', ()=> {
+  //   render(< List list={stories}/>)
+
+  //   expect(screen.getAllByRole('button')).toBeInTheDocument()
+    
+  // })
 })
