@@ -1,9 +1,13 @@
+import * as React from 'react';
+import { InputWithLabel } from './InputWithLabel';
+import styles from './App.module.css';
+
 const SearchForm = ({
   searchTerm,
   onSearchInput,
   onSearchSubmit,
   }) => (
-    <StyledSearchForm onSubmit={onSearchSubmit}>
+    <form onSubmit={onSearchSubmit} className={styles.searchForm}>
     <InputWithLabel 
       id="search" 
       isFocused 
@@ -14,12 +18,15 @@ const SearchForm = ({
       <strong>Search:</strong>
     </InputWithLabel>
 
-    <StyledButtonLarge
+    <button
       type="submit"
       disabled={!searchTerm}
       // onClick={handleSearchSubmit}
+      className={`${styles.button} ${styles.buttonLarge}`}
     >
     Submit
-    </StyledButtonLarge>
-  </StyledSearchForm>
+    </button>
+  </form>
 );
+
+export { SearchForm };

@@ -1,3 +1,6 @@
+import * as React from 'react';
+import styles from './App.module.css';
+
 const InputWithLabel = ({id, type="text", isFocused, children, value, onInputChange}) => {
 
   const inputRef = React.useRef();
@@ -11,8 +14,15 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 
   return(
     <>
-      <StyledLabel htmlFor={id}>{children}:</StyledLabel>
-      <StyledInput ref={inputRef} type={type} value={value} onChange={onInputChange} />
+      <label htmlFor={id} className={styles.label}>{children}:</label>
+      <input
+        ref={inputRef}
+        type={type}
+        value={value}
+        onChange={onInputChange} 
+      />
     </>
   )
 }
+
+export{ InputWithLabel }
