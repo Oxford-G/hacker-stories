@@ -1,5 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`List renders snapshot 1`] = `
+<ul>
+  <li
+    class="sc-dkPtRN kxqBxP"
+  >
+    <span
+      class="sc-hKwDye fAapS"
+      width="40%"
+    >
+      <a
+        href="https://reactjs.org/"
+      >
+        React
+      </a>
+    </span>
+    <span
+      class="sc-hKwDye fAOVt"
+      width="30%"
+    >
+      Jordan Walke
+    </span>
+    <span
+      class="sc-hKwDye fBnWn"
+      width="10%"
+    >
+      3
+    </span>
+    <span
+      class="sc-hKwDye fBnWn"
+      width="10%"
+    >
+      4
+    </span>
+    <span
+      class="sc-hKwDye fBnWn"
+      width="10%"
+    >
+      <button
+        class="sc-eCImPb sc-jRQBWg dQwsXJ ehdZKR"
+        type="button"
+      >
+        <svg
+          height="18px"
+          width="18px"
+        >
+          delete.svg
+        </svg>
+      </button>
+    </span>
+  </li>
+  <li
+    class="sc-dkPtRN kxqBxP"
+  >
+    <span
+      class="sc-hKwDye fAapS"
+      width="40%"
+    >
+      <a
+        href="https://redux.js.org/"
+      >
+        Redux
+      </a>
+    </span>
+    <span
+      class="sc-hKwDye fAOVt"
+      width="30%"
+    >
+      Dan Abramov, Andrew Clark
+    </span>
+    <span
+      class="sc-hKwDye fBnWn"
+      width="10%"
+    >
+      2
+    </span>
+    <span
+      class="sc-hKwDye fBnWn"
+      width="10%"
+    >
+      5
+    </span>
+    <span
+      class="sc-hKwDye fBnWn"
+      width="10%"
+    >
+      <button
+        class="sc-eCImPb sc-jRQBWg dQwsXJ ehdZKR"
+        type="button"
+      >
+        <svg
+          height="18px"
+          width="18px"
+        >
+          delete.svg
+        </svg>
+      </button>
+    </span>
+  </li>
+</ul>
+`;
+
 exports[`SearchForm renders snapshot 1`] = `
 <form
   class="sc-iCfMLu eaaiGg"

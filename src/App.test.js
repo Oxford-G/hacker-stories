@@ -166,6 +166,11 @@ describe('List', ()=> {
     expect(screen.getAllByRole('button').length).toBe(2)
     
   })
+
+  test('renders snapshot', ()=> {
+    const {container} = render(< List list={stories}/>)
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })
 
 describe('App', () => {
