@@ -146,6 +146,7 @@ describe('SearchForm', ()=> {
 
   test('renders snapshot', ()=> {
     const {container} = render(<SearchForm {...searchFormProps} />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
 
