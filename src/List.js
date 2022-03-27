@@ -1,14 +1,25 @@
 import * as React from 'react';
 import { ReactComponent as Check } from './delete.svg';
 import styles from './App.module.css';
+import { sortBy } from 'lodash';
 
-const List = React.memo(
-  ({list, onRemoveItem}) => {
+const SORTS = {
+  NONE: (list) => list,
+  TITLE: (list) => sortBy(list, 'title'),
+  AUTHOR: (list) => sortBy(list, 'author'),
+  COMMENT: (list) => sortBy(list, 'num_comments').reverse(),
+  POINT: (list) => sortBy(list, 'points').reverse(),
+};
+
+const List = ({list, onRemoveItem}) => {
     const [sort, setSort] = React.useState('NONE');
 
     const handleSort = (sortKey) => {
       setSort(sortKey);
     };
+
+    const sortFunction = SORTS[sort];
+    const sortedList = sortFunction(list);
 
     return(
       <ul>
@@ -19,34 +30,28 @@ const List = React.memo(
             </button>
           </span>
           <span style={{ width: '30%' }}>
-            <button type="button" onClick={() => handleSort('Author')}>
+            <button type="button" onClick={() => handleSort('AUTHOR')}>
             Author
             </button>
           </span>
           <span style={{ width: '10%' }}>
-            <button type="button" onClick={() => handleSort('Comments')}>
+            <button type="button" onClick={() => handleSort('COMMENT')}>
             Comments
             </button>
           </span>
           <span style={{ width: '10%' }}>
-            <button type="button" onClick={() => handleSort('Points')}>
+            <button type="button" onClick={() => handleSort('POINT')}>
             Points
-            </button>
-          </span>
-          <span style={{ width: '10%' }}>
-            <button type="button" onClick={() => handleSort('Actions')}>
-            Actions
             </button>
           </span>
         </li>
 
-        {list.map((item) => (
+        {sortedList.map((item) => (
           <Item key={item.objectID} item = {item} onRemoveItem={onRemoveItem}/>
         ))}
       </ul>
-    )
-  }
-);
+    );
+  };
 
 const Item = (
   {item, onRemoveItem}) => (

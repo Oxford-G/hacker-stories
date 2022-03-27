@@ -3,7 +3,6 @@ import axios from 'axios';
 import styles from './App.module.css';
 import { SearchForm } from './SearchForm';
 import { List } from './List';
-import { sortBy } from 'lodash';
 
 const welcome = {
   greetings: 'Hey',
