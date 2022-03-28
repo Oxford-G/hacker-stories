@@ -100,6 +100,8 @@ const getLastSearches = (urls) => urls.slice(-5).map((url) => extractSearchTerm(
 
 const extractSearchTerm = (url) => url.replace(API_ENDPOINT, '');
 
+const getUrl = (searchTerm) => `${API_ENDPOINT}${searchTerm}`;
+
 
 const App = () => {
 
@@ -183,9 +185,10 @@ const App = () => {
   };
 
   const handleSearchSubmit = (event) => {
-    const url = `${API_ENDPOINT}${searchTerm}`;
+    handleSearch(searchTerm);
+    // const url = `${API_ENDPOINT}${searchTerm}`;
     // setUrl(`${API_ENDPOINT}${searchTerm}`);
-    setUrls(urls.concat(url));
+    // setUrls(urls.concat(url));
 
     event.preventDefault();
   };
@@ -193,8 +196,15 @@ const App = () => {
   /*const searchedStories = stories.data.filter((story) => story.title.toLowerCase().includes(searchTerm.toLowerCase())
   )*/
 
-  const handleLastSearch = (url) => {
-    // do something
+  const handleLastSearch = (searchTerm) => {
+    handleSearch(searchTerm);
+    // const url = `${API_ENDPOINT}${searchTerm}`;
+    // setUrls(urls.concat(url));
+  };
+
+  const handleSearch = (searchTerm) => {
+    const url = getUrl(searchTerm);
+    setUrls(urls.concat(url));
   };
 
   const lastSearches = getLastSearches(urls);
