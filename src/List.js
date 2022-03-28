@@ -19,7 +19,6 @@ const List = ({list, onRemoveItem}) => {
 
     const handleSort = (sortKey) => {
       const isReverse = sort.sortKey === sortKey;
-      // setSort({ sortKey: sortKey, isReverse: isReverse });
       setSort({ sortKey, isReverse });
     };
 

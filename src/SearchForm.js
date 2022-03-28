@@ -12,7 +12,6 @@ const SearchForm = ({
       id="search" 
       isFocused 
       value={searchTerm} 
-      // onInputChange={handleSearch}
       onInputChange={onSearchInput}
     >
       <strong>Search:</strong>
@@ -21,7 +20,6 @@ const SearchForm = ({
     <button
       type="submit"
       disabled={!searchTerm}
-      // onClick={handleSearchSubmit}
       className={`${styles.button} ${styles.buttonLarge}`}
     >
     Submit
