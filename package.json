@@ -2,6 +2,10 @@
   "name": "hacker-stories",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "8.5.2",
+    "node": "16.14.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-regular-svg-icons": "^6.1.0",
