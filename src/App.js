@@ -30,8 +30,7 @@ const useSemiPersistentState = (
     } else {
       localStorage.setItem(key, value);
     }
-  },[value, key]);
-  
+  },[value, key]); 
   return [value, setValue]
 };
 
