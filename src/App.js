@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from './App.module.css';
 import { SearchForm } from './SearchForm';
 import { List } from './List';
+import { ReactComponent as Logo } from './eye-regular.svg';
 
 const welcome = {
   greetings: 'Hey',
@@ -175,6 +176,13 @@ const App = () => {
 
   return (
     <div className={styles.container}>
+      <nav className={styles.nav}>
+        <ul>
+          <li>
+            <Logo height="38px" width="38px"/>
+          </li>
+        </ul>
+      </nav>
   
       <h1 className={styles.headlinePrimary}>My Hacker Stories with {sumComments} comments</h1>
 
