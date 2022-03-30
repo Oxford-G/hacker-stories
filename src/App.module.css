@@ -48,7 +48,9 @@
 }
 
 .buttonLarge {
-  padding: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 24px;
 }
 
 .searchForm {
@@ -58,15 +60,17 @@
 }
 
 .label {
-  border-top: 1px solid #171212;
-  border-left: 1px solid #171212;
+  border: 1px solid #171212;
   padding-left: 5px;
   font-size: 24px;
+  padding: 10px;
 }
 
 .input {
   border: none;
   border-bottom: 1px solid #171212;
+  border-top: 1px solid #171212;
   background-color: transparent;
   font-size: 24px;
+  padding: 7px;
 }

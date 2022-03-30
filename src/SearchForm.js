@@ -8,23 +8,23 @@ const SearchForm = ({
   onSearchSubmit,
   }) => (
     <form onSubmit={onSearchSubmit} className={styles.searchForm}>
-    <InputWithLabel 
-      id="search" 
-      isFocused 
-      value={searchTerm} 
-      onInputChange={onSearchInput}
-    >
-      <strong>Search:</strong>
-    </InputWithLabel>
+      <InputWithLabel 
+        id="search" 
+        isFocused 
+        value={searchTerm} 
+        onInputChange={onSearchInput}
+      >
+        <strong>Search:</strong>
+      </InputWithLabel>
 
-    <button
-      type="submit"
-      disabled={!searchTerm}
-      className={`${styles.button} ${styles.buttonLarge}`}
-    >
-    Submit
-    </button>
-  </form>
+      <button
+        type="submit"
+        disabled={!searchTerm}
+        className={`${styles.button} ${styles.buttonLarge}`}
+      >
+      Submit
+      </button>
+    </form>
 );
 
 export { SearchForm };

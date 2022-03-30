@@ -14,12 +14,13 @@ const InputWithLabel = ({id, type="text", isFocused, children, value, onInputCha
 
   return(
     <>
-      <label htmlFor={id} className={styles.label}>{children}:</label>
+      <label htmlFor={id} className={styles.label}>{children}</label>
       <input
         ref={inputRef}
         type={type}
         value={value}
         onChange={onInputChange} 
+        className={styles.input}
       />
     </>
   )
