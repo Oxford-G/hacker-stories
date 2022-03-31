@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import { SearchForm } from './SearchForm';
 import { List } from './List';
 import { ReactComponent as Logo } from './eye-regular.svg';
+import { ReactComponent as Brands } from './brands.svg';
 
 const welcome = {
   greetings: 'Hey',
@@ -176,10 +177,16 @@ const App = () => {
 
   return (
     <div className={styles.container}>
+      
       <nav className={styles.nav}>
-        <ul>
-          <li>
-            <Logo height="38px" width="38px"/>
+        <ul className={styles.ul}>
+          <li className={styles.navLogo}>
+            <Logo height="100px" width="100px" background-color="red"/>
+          </li>
+          <li><span>My Hacker Stories</span></li>
+          <li className={styles.brand}>
+            <span><Brands height="50px" width="auto" /></span>
+            <span className={styles.brandLogo}>{sumComments} comments</span>
           </li>
         </ul>
       </nav>
