@@ -27,23 +27,23 @@ const List = ({list, onRemoveItem}) => {
 
     return(
       <ul>
-        <li style={{ display: 'flex' }}>
-          <span style={{ width: '40%' }}>
+        <li style={{ display: 'flex' }} className={styles.headerButton}>
+          <span style={{ width: '40%' }} className={styles.headerButton1}>
             <button type="button" onClick={() => handleSort('TITLE')}>
             Title
             </button>
           </span>
-          <span style={{ width: '30%' }}>
+          <span style={{ width: '30%' }} className={styles.headerButton2}>
             <button type="button" onClick={() => handleSort('AUTHOR')}>
             Author
             </button>
           </span>
-          <span style={{ width: '10%' }}>
+          <span style={{ width: '10%' }} className={styles.headerButton3}>
             <button type="button" onClick={() => handleSort('COMMENT')}>
             Comments
             </button>
           </span>
-          <span style={{ width: '10%' }}>
+          <span style={{ width: '10%' }} className={styles.headerButton4}>
             <button type="button" onClick={() => handleSort('POINT')}>
             Points
             </button>

@@ -7,8 +7,8 @@ import { ReactComponent as Logo } from './eye-regular.svg';
 import { ReactComponent as Brands } from './brands.svg';
 
 const welcome = {
-  greetings: 'Hey',
-  title: 'React'
+  greetings: 'Search',
+  title: 'Your'
 }
 
 const API_BASE = 'https://hn.algolia.com/api/v1';
@@ -176,51 +176,52 @@ const App = () => {
   const sumComments = React.useMemo(()=> getSumComments(stories), [stories])
 
   return (
-    <div className={styles.container}>
-      
+    <div>
       <nav className={styles.nav}>
         <ul className={styles.ul}>
           <li className={styles.navLogo}>
-            <Logo height="100px" width="100px" background-color="red"/>
+            <Logo height="50px" width="100px" background-color="red"/>
           </li>
-          <li><span>My Hacker Stories</span></li>
+          <li className={styles.head}>My Hacker Stories</li>
           <li className={styles.brand}>
-            <span><Brands height="50px" width="auto" /></span>
+            <span className={styles.navLogo2}><Brands height="50px" width="auto" /></span>
             <span className={styles.brandLogo}>{sumComments} comments</span>
           </li>
         </ul>
       </nav>
-  
-      <h1 className={styles.headlinePrimary}>My Hacker Stories with {sumComments} comments</h1>
-
-      <h1>{welcome.greetings} {welcome.title}</h1>
-
-      <SearchForm
-        searchTerm={searchTerm}
-        onSearchInput={handleSearchInput}
-        onSearchSubmit={handleSearchSubmit}
-      />
-
-      <LastSearches
-      lastSearches={lastSearches}
-      onLastSearch={handleLastSearch}
-      />
-
-      <hr />
-    
-      {stories.isError && <p>Something went wrong ...</p>}
       
-      <List list={stories.data} onRemoveItem={handleRemoveStory} />
-      
-      {stories.isLoading ?(
+      <div className={styles.container}>
+        <h1 className={styles.headlinePrimary}>Welcome to my Hacker Stories</h1>
 
-        <p>loading ...</p>
-      ) : (
+        <h1>{welcome.greetings} {welcome.title} Favourite Stories</h1>
 
-      <button type="button" onClick={handleMore}>
-        More
-      </button>
-      )}
+        <SearchForm
+          searchTerm={searchTerm}
+          onSearchInput={handleSearchInput}
+          onSearchSubmit={handleSearchSubmit}
+        />
+
+        <LastSearches
+        lastSearches={lastSearches}
+        onLastSearch={handleLastSearch}
+        />
+
+        <hr />
+
+        {stories.isError && <p>Something went wrong ...</p>}
+
+        <List list={stories.data} onRemoveItem={handleRemoveStory} />
+
+        {stories.isLoading ?(
+
+          <p>loading ...</p>
+        ) : (
+
+        <button type="button" onClick={handleMore}>
+          More
+        </button>
+        )} 
+      </div>
     </div>
   )
 };
